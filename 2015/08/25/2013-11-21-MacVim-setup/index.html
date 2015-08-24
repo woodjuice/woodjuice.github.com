@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>MacVim setup | Sugar Door</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="First guide for MacVim">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MacVim setup">
+<meta property="og:url" content="WoodJuice.github.com/2015/08/25/2013-11-21-MacVim-setup/index.html">
+<meta property="og:site_name" content="Sugar Door">
+<meta property="og:description" content="First guide for MacVim">
+<meta property="og:updated_time" content="2015-08-24T17:29:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MacVim setup">
+<meta name="twitter:description" content="First guide for MacVim">
+  
+    <link rel="alternative" href="/atom.xml" title="Sugar Door" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.mantoufan.com/a/8/201409/14098795763615.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">WoodJuice</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/notes">随笔</a></li>
+				        
+							<li><a href="/tags/Photo">Photo</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/woodjuice.github.io" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="http://www.douban.com/people/89925879/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/MacVim/" style="font-size: 10px;">MacVim</a> <a href="/tags/Notes/" style="font-size: 10px;">Notes</a> <a href="/tags/Technical-note/" style="font-size: 10px;">Technical note</a> <a href="/tags/微信文字存档/" style="font-size: 10px;">微信文字存档</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">汪，汪汪，汪汪汪...汪？</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">WoodJuice</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://www.mantoufan.com/a/8/201409/14098795763615.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">WoodJuice</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/notes">随笔</a></li>
+		        
+					<li><a href="/tags/Photo">Photo</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/woodjuice.github.io" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="http://www.douban.com/people/89925879/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-2013-11-21-MacVim-setup" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/25/2013-11-21-MacVim-setup/" class="article-date">
+  	<time datetime="2015-08-24T17:29:36.000Z" itemprop="datePublished">2015-08-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MacVim setup
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MacVim/">MacVim</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>考虑到某同学要在 Mac Os X 上学习 vim 的需求，于是汇总一篇 MacVim 的初步指南。<br>考虑到 github 和 gitcafe 的流行，在文中也涉及到某些 git 的应用</p>
+</blockquote>
+<p>Vim 的学习曲线比较陡峭，所以建议日常的时候使用 Vim 做一些不紧急的文书工作，比如我写这篇 blog，就是在 vim 下使用<a href="https://github.com/plasticboy/vim-markdown" target="_blank" rel="external">plasticboy/vim-markdownh</a>插件来完成，虽然不如 mou 之类Markdown实时渲染写作 app专业，但是胜在编辑长文章的时候跳转查找批量编辑方便，顺便也对vim 的快捷键有一个复习。同时，对于在 window/Linux 上使用过 vim 的同学也可以逐步感受出 MacVim 和 Vim 的一些区别。    </p>
+<p>声明：</p>
+<ol>
+<li>部分参考资料来自网络，已在在文末列出 Reference List  </li>
+<li>本文遵循 MIT 原则，转载请保留出处：woodjuice.github.io</li>
+</ol>
+<a id="more"></a>
+<h2 id="MacVim_install_(MacVim安装指南)">MacVim install (MacVim安装指南)</h2><ol>
+<li>Click and Download Macvim. //下载 macvim，国内不能下载的同学请戳<a href="http://download.csdn.net/download/myscom/8008723） (适合10.9+系统" target="_blank" rel="external">这里</a></li>
+<li>Unzip the items and drag <em>MacVim.app</em> into Applicationsfolder. //解压缩文件，然后把MacVim拖到<em>应用程序</em>里</li>
+<li>drag <em>mvim</em> into <em>/usr/bin</em>, then you can use <em>mvim</em> to start Macvim. //为了能在终端打开 MacVim，可以将mvim 这个脚本拖进<em>/usr/bin</em>.  </li>
+<li>If you need some help, type<em>:h mvim</em>. //要是丫出了啥妖蛾子需要帮助，就猛拍键盘输入<em>:h mvim</em></li>
+</ol>
+<p><br><br></p>
+<h2 id="配置文件存放点">配置文件存放点</h2><p><strong>gvimrc</strong>和<strong>vimrc</strong>  </p>
+<p><strong>gvimrc</strong>是来存放外观设置的地方，<strong>vimrc</strong>是来存放对 vim 本身设置的地方，一般来说我们需要修改的是用户自己的 vimrc 和 gvimrc，而不是在全局文件上做修改，以防出什么幺蛾子。<br>gvimrc 存放在<em>~/.gvimrc</em><br>vimrc 存放在<em>~/.vimrc</em>  </p>
+<blockquote>
+<p>“.”表示这是一个隐藏文件，如果你发现没有这两个文件存在，请直接手动创建一个  </p>
+</blockquote>
+<p><br><br></p>
+<h3 id="一些小问题">一些小问题</h3><p><strong>蛋疼的编码问题</strong>  </p>
+<p>MacVim always set encoding to <em>UTF-8</em> //MacVim 直接把编码设置成 UTF8</p>
+<pr></pr>
+
+
+<p><strong>标签功能</strong><br>simply type <em>:tabe $VIM/gvimrc</em>  </p>
+<p><strong>更像 Mac 系统自带编辑器的方式移动光标</strong></p>
+<blockquote>
+<p>Text editors on Mac OS X lets the user hold down shift+movement key to extend<br>the selection.  Also, pressing a printable key whilst selecting replaces the<br>current selection with that character.   </p>
+</blockquote>
+<p>Mac OS X 提供<em>shift+上下左右</em>来做文本选择，要替换的时候就敲入自己所需要的内容。要实现这个功能，只要<em>~/.vimrc</em>加入自己的设置</p>
+<p>代码如下</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="function"><span class="title">has</span><span class="params">(<span class="string">"gui_macvim"</span>)</span></span>  </span><br><span class="line">	  let macvim_hig_shift_movement = <span class="number">1</span>  </span><br><span class="line">	endif</span><br></pre></td></tr></table></figure>
+<p><br><br></p>
+<h2 id="一些简单的命令和快捷键">一些简单的命令和快捷键</h2><p>1.<em>so </em> 这是 source 命令，在对 vimrc 文件编辑以后，经常使用<em>so ~/.vimrc</em>进行编译和排错</p>
+<ol>
+<li>打开命令，快捷键为 command+o, 或者输入<em>open .</em>,比如要打开<em>vimrc</em>文件的时候就输入<blockquote>
+<p>open ~/.vimrc</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="插件介绍">插件介绍</h2><pr></pr>
+
+<p><strong>Vundle</strong></p>
+<blockquote>
+<p>Vundle 是一个将 vim 插件集中管理的插件，在使用 Vundle 之前必须要将各个插件包的各个部分分别解压到对应的文件夹，Vundle则会在<em>~/vim/bundle</em>文件夹里统一下载管理。</p>
+</blockquote>
+<h4 id="Vundle_Setup">Vundle Setup</h4><p><pr></pr></p>
+<blockquote>
+<p>git clone <a href="http://github.com/gmarik/vundle.git" target="_blank" rel="external">http://github.com/gmarik/vundle.git</a> ~/.vim/bundle/vundle*  </p>
+</blockquote>
+<p>在<em>vimrc</em>文件里写入<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">set nocompatible    " be iMproved</span><br><span class="line">filetype off        " required!</span><br><span class="line">set rtp+=~/.vim/bundle/vundle/</span><br><span class="line">call vundle#rc()</span><br><span class="line">" let Vundle manage Vundle</span><br><span class="line">" required!</span><br><span class="line">Bundle <span class="emphasis">*gmarik/vundle*</span></span><br><span class="line">" vim-scripts repos</span><br><span class="line">Bundle <span class="emphasis">*vim-plugin-foo*</span></span><br><span class="line">Bundle <span class="emphasis">*vim-plugin-bar*</span></span><br><span class="line">filetype plugin indent on    " required!</span><br><span class="line"><span class="code">```</span>  </span><br><span class="line"></span><br><span class="line">安装就完成了  </span><br><span class="line"></span><br><span class="line"><span class="header">#### Vundle Usage </span></span><br><span class="line"></span><br><span class="line">安装插件: <span class="emphasis">*:BundleInstall*</span>,即可以直接在<span class="emphasis">*BundleInstall*</span>后面跟上 github 上的项目名 </span><br><span class="line">更新插件: <span class="emphasis">*BundleUpdate*</span>  </span><br><span class="line">"卸载不在列表中的插件: <span class="emphasis">*:BundleClean*</span>  </span><br><span class="line"></span><br><span class="line">也可以直接在<span class="emphasis">*Vimrc*</span>里写入要安装的插件名，比如：  </span><br><span class="line"><span class="emphasis">*Bundle ctrlp.vim*</span>  //这个是在 vim-script 上的项目</span><br><span class="line"><span class="emphasis">*Bundle Valloric/YouCompleteMe*</span>*  //这个就是一个 github 上的repo</span><br><span class="line"></span><br><span class="line"><span class="horizontal_rule">----------------</span></span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">pr</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="title">pr</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="header">### Some plugins from Vundle</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">pr</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="title">pr</span>&gt;</span></span></span><br><span class="line"><span class="strong">**plasticboy/vim-markdown**</span>	</span><br><span class="line"></span><br><span class="line">Markdown语法插件github地址请猛击：[<span class="link_label">plasticboy/vim-markdownh</span>](<span class="link_url">https://github.com/plasticboy/vim-markdown/</span>)</span><br><span class="line"></span><br><span class="line">用 Vundle 安装时，先在<span class="emphasis">*~/.vimrc*</span>加入   </span><br><span class="line"></span><br><span class="line"><span class="code">```</span>  </span><br><span class="line"></span><br><span class="line">Plugin <span class="emphasis">*godlygeek/tabular*</span></span><br><span class="line">Plugin <span class="emphasis">*plasticboy/vim-markdown*</span></span><br></pre></td></tr></table></figure></p>
+<p><pr></pr><br>之后运行</p>
+<pre><code><span class="pseudo">:so</span> ~/<span class="class">.vimrc</span>
+<span class="pseudo">:PluginInstall</span>
+</code></pre><p>第一条语句是用来source vimrc 文件的，第二条进行安装</p>
+<p><strong>ZenCoding.vim</strong>  </p>
+<p><a href="http://pepelsbey.net/2008/08/zen-html/" target="_blank" rel="external">ZenCoding</a><br>这个插件估计都成为Html/Css 同学的标配插件。  </p>
+<p>不多说，上演示<a href="http://v.youku.com/v_show/id_XMTM4NDQwNzgw.html" target="_blank" rel="external">视频</a>，尼玛太尼玛的快了  </p>
+<p>ZenCoding墙内介绍请戳<a href="http://blog.chinaunix.net/uid-22414998-id-3183557.html" target="_blank" rel="external">这里</a></p>
+<h3 id="Reference">Reference</h3><p><a href="http://249wangmang.blog.163.com/blog/static/526307652012103010202962/" target="_blank" rel="external">vim插件管理Vundle</a></p>
+<p><a href="http://beiyuu.com/git-vim-tutorial/" target="_blank" rel="external">Git时代的VIM不完全使用教程</a></p>
+<p><a href="http://blog.chinaunix.net/uid-22414998-id-3183557.html" target="_blank" rel="external">国内对 ZenCoding比较详尽的一个</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/08/25/生命是否无限真的有那么重要吗？/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          无限生命是否真的这么重要
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/14/Hexo-Notes/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo Notes</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2013-11-21-MacVim-setup" data-title="MacVim setup" data-url="WoodJuice.github.com/2015/08/25/2013-11-21-MacVim-setup/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"woodjuice"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 WoodJuice
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
