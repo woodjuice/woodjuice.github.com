@@ -198,7 +198,7 @@
     <link href="WoodJuice.github.com/2015/08/14/Hexo-Notes/"/>
     <id>WoodJuice.github.com/2015/08/14/Hexo-Notes/</id>
     <published>2015-08-14T14:11:04.000Z</published>
-    <updated>2015-08-24T17:29:37.000Z</updated>
+    <updated>2015-08-24T17:41:39.000Z</updated>
     <content type="html"><![CDATA[<h3 id="How_to_set_muti-tags?">How to set muti-tags?</h3><p>Try on this way when you need to set tags more than one.</p>
 <figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">tags</span>: <span class="string">[Hexo, Technical note, Blog]</span></span><br></pre></td></tr></table></figure>
 <p>Then</p>
@@ -216,9 +216,8 @@
 <p>That’s all!</p>
 <p><br><br></p>
 <h3 id="node-gyp_rebuild?">node-gyp rebuild?</h3><p>When I try to install hexo on OS X 10.10.5, node-gyp rebuild cannot be installed correctly.</p>
-<pre><code>The solution <span class="keyword">is</span>:
-
-    npm install hexo <span class="comment">--no-optional</span>
+<p>The solution is:</p>
+<pre><code><span class="built_in">npm</span> install hexo --<span class="literal">no</span>-optional
 </code></pre><p>Ref: <a href="https://github.com/hexojs/hexo/issues/1262" target="_blank" rel="external">https://github.com/hexojs/hexo/issues/1262</a>  </p>
 <p><br><br></p>
 ]]></content>
