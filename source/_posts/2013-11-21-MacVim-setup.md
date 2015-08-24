@@ -1,4 +1,4 @@
-layout: post
+
 title: MacVim setup 
 description: First guide for MacVim 
 tags: [MacVim, Mac]
