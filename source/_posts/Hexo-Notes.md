@@ -39,9 +39,9 @@ That's all!
 
 When I try to install hexo on OS X 10.10.5, node-gyp rebuild cannot be installed correctly.
 
-	The solution is:
+The solution is:  
 
-		npm install hexo --no-optional
+> npm install hexo --no-optional  
 
 Ref: https://github.com/hexojs/hexo/issues/1262  
 
