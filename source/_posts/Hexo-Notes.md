@@ -37,7 +37,7 @@ That's all!
 
 ### node-gyp rebuild?
 
-	When I try to install hexo on OS X 10.10.5, node-gyp rebuild cannot be installed correctly.
+When I try to install hexo on OS X 10.10.5, node-gyp rebuild cannot be installed correctly.
 
 	The solution is:
 
