@@ -1,0 +1,430 @@
+layout: post
+title: 关于 Iterm2 & Zsh的安装手册(持续更新)
+description: 关于 Iterm2 & Zsh
+Tags: Iterm2,OS X,ZSH,Tmux  
+--- 
+
+##关于 Iterm2 & Zsh & Tmux
+
+**三者区别和联系**
+
+有新手问,三者关系和联系是啥    
+简而言之:
+
+- [Iterm2](https://iterm2.com/)是终端模拟器的一种, 就是类似你在 spotlight 输入`终端`然后打开的 App长的那样.之所以在这里使用,而不是用系统的,是因为其更加方便.  
+- [Zsh](http://www.zsh.org)是Shell的一种.  
+- Tmux是一个终端复用软件.因为个人使用的比较少,所以下面文中不介绍,需要的同学请看Tmux参考[^1](http://mingxinglai.com/cn/2012/09/tmux/)
+
+三者关系还可以参考这篇: http://www.tuicool.com/articles/3IjqMb
+
+-----------------------------------------------
+
+文章目录
+
+比较长,建议看小节目录或者 cmd+F
+
+- Iterm2  
+    * 安装
+    * 快捷键
+    * 设置备份文件位置
+    
+- Zsh & zsh-completion & oh-my-zsh
+    * 安装
+    * 个人的配置文件.zshrc
+    * Tab 命令补全
+    * 命令纠错
+    * 提示符自定义
+    * 历史记录
+    * 杂项设置
+    * 把zsh设置成默认的shell
+    * 插件之 autojump安装设置以及命令说明
+    * 插件之 CDF
+
+### Iterm2
+
+**安装iterm2**
+
+去[Iterm2](https://iterm2.com/)下载,然后拖入 `Application` 文件夹就行了.
+
+**Iterm2 快捷键**  
+
+这一节内容复制自: http://blog.csdn.net/meegomeego/article/details/13022673
+
+官方文档有非常详细的介绍，先来看看自带有哪些很实用的功能/快捷键  
+
+- `⌘ +` 数字在各 tab 标签直接来回切换  
+- 选择即复制 + 鼠标中键粘贴，这个很实用  
+- `⌘ + f` 所查找的内容会被自动复制  
+- `⌘ + d` 横着分屏 / `⌘ + shift + d` 竖着分屏  
+- `⌘ + r` = clear，而且只是换到新一屏，不会像 clear 一样创建一个空屏  
+- `ctrl + u` 清空当前行，无论光标在什么位置  
+- 输入开头命令后 按 `⌘ + ;` 会自动列出输入过的命令  
+- `⌘ + shift + h` 会列出剪切板历史    
+-  可以在 `Preferences > keys` 设置全局快捷键调出 iterm，这个也可以用过 Alfred 实现
+ 
+- `⌘←` / `⌘→` 到一行命令最左边/最右边 ，这个功能同 `C+a` / `C+e`  
+- `⌥←` / `⌥→` 按单词前移/后移，相当与 `C+f` / `C+b`，其实这个功能在Iterm中已经预定义好了，或者用 `⌥f` / `⌥b`，看个人习惯了  
+
+- `C+a / C+e` 这个几乎在哪都可以使用    
+- `C+p / !!` 上一条命令  
+- `C+k` 从光标处删至命令行尾 (本来 `C+u` 是删至命令行首，但iterm中是删掉整行)  
+- `C+w` `A+d` 从光标处删至字首/尾  
+- `C+h` `C+d` 删掉光标前后的字符  
+- `C+y` 粘贴至光标后  
+- `C+r` 搜索命令历史，这个较常用  
+
+其中 `C` 就是 Control 键  
+
+**关于备份，配置文件位于**  
+
+```
+~/Library/Preferences/com.googlecode.iterm2.plist
+```
+
+可以把这个文件备份下来，等下次换环境了直接导入也免得重新配置  
+
+------------------------------------------
+
+### Zsh
+
+**安装**  
+
+分别需要安装 Zsh,zsh-completions, 以及 Oh-my-zsh  
+
+* 安装 Zsh(软件本体)和 zsh-completions(补全包)
+
+`brew install zsh zsh-completions`
+
+* Oh-my-zsh 的安装 (zsh的framework的一种,深受广大群众喜爱的主题啊之类的都在这里)
+
+`curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh`
+
+
+
+#### zsh 的设置
+
+这部分主要写了一些 zsh 的常用配置,除了可以将下面命令敲入命令行,也可以保存到`~/.zshrc` 中,每次保存完记得 source:`source ~/.zshrc`
+
+这部分内容参考了以下链接:
+
+- http://www.gentoo.org/doc/zh_cn/zsh.xml
+- http://macshuo.com/?p=676  
+- http://icarus4.logdown.com/  
+
+**PS**: 详细的zsh官方帮助(包括快捷键指南,很好很多很强大)可以输入`man zsh` 获得.也可以查阅[Wiki](https://wiki.archlinux.org/index.php/Zsh_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
+
+--------------------
+
+**先贴出我的~/.zshrc 文件**,需要详细讲解的童鞋请看配置文件之后的内容
+
+```
+# oh-my-zsh 设置.
+export ZSH=$HOME/.oh-my-zsh
+
+# zsh-completions 设置
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# 主题包设置
+# 主题包在 ~/.oh-my-zsh/themes/ 内查看
+# 想随机感受主题包,则把数值设置成"random", 
+
+ZSH_THEME="agnoster"
+
+# alias别名转义设置
+# alias在ZSH_CUSTOM文件夹里
+# 要查看详细的 alias 则使用`alias`命令
+
+alias zshconfig="vi ~/.zshrc"
+alias envconfig="vi ~/Projects/config/env.sh"
+
+alias cls='clear'
+alias ll='ls -l'
+alias la='ls -a'
+alias vi='mvim'
+alias javac="javac -J-Dfile.encoding=utf8"
+alias grep="grep --color=auto"
+alias -s html=mate   # 在命令行直接输入后缀为 html 的文件名，会在 TextMate 中打开
+alias -s rb=mate     # 在命令行直接输入 ruby 文件，会在 TextMate 中打开
+alias -s py=vi       # 在命令行直接输入 python 文件，会用 vim 中打开，以下类似
+alias -s js=vi
+alias -s c=vi
+alias -s java=vi
+alias -s txt=vi
+alias -s gz='tar -xzvf'
+alias -s tgz='tar -xzvf'
+alias -s zip='unzip'
+alias -s bz2='tar -xjvf'
+
+#插件设置
+plugins=(git autojump textmate ruby osx mvn gradle)
+
+#autojump 的设置
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+# 大小写敏感的补全
+# CASE_SENSITIVE="true"
+
+# 关闭自动更新
+# DISABLE_AUTO_UPDATE="true"
+
+# 决定多久自动更新一次.
+# export UPDATE_ZSH_DAYS=13
+
+# ls命令中不用彩色 
+# DISABLE_LS_COLORS="true"
+
+# 不设置自动标题
+# DISABLE_AUTO_TITLE="true"
+
+# 自动纠错 
+# ENABLE_CORRECTION="true"
+
+# 用.来自动补全
+# COMPLETION_WAITING_DOTS="true"
+
+# VCS文件不追踪
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# 三种不同的时间戳 "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# 自定义 zsh_custom 文件夹
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+
+# Path 设置
+
+export PATH="/Users/MMTT/.rvm/gems/ruby-2.0.0-p481/bin:/Users/MMTT/.rvm/gems/ruby-2.0.0-p481@global/bin:/Users/MMTT/.rvm/rubies/ruby-2.0.0-p481/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/MMTT/.rvm/bin"
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# 语言环境设置
+# export LANG=en_US.UTF-8
+
+# 在 remote sessions 里使用自己喜欢的编辑器
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh设置
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+
+function gi() { curl -L -s https : // www.gitignore.io/api/$@ ;}
+function gi() { curl -L -s https : // www.gitignore.io/api/$@ ;}
+
+```
+-------------
+
+**解释**
+
+* Tab 补全命令(有 zsh-comletions)
+
+1. 在`/.zshrc`里加入`fpath=(/usr/local/share/zsh-completions $fpath)`
+2. 权限设置`chmod go-w /usr/local/share`
+3. 重做 Zsh 的补全`rm -f ~/.zcompdump; compinit`
+
+* Tab补全命令(非 zsh-completions)
+ 
+```
+autoload -U compinit  
+compinit
+```
+
+默认的补全风格非常的普通和简陋。如果你要改进它的外观，运行以下的命令：   
+
+```
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+```
+   
+```
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+```  
+
+
+---------------------  
+  
+
+* 命令纠错  
+
+```
+setopt correctall
+```
+  
+
+* 提示符自定义
+
+1. 打开高级提示符选项
+
+```
+autoload -U promptinit
+promptinit
+```  
+
+2. 使用`prompt -p`命令来列出可用的提示符样本。  
+
+3. 选择名为`gentoo`的提示符(可以使用你选择的提示符替代gentoo)  
+ 
+```
+prompt gentoo
+```
+
+**PS**: 如果你在尝试不同的提示符，并且你不想看到每一个提示符的示例，那么你可以使用prompt -l来列出可用的提示符。   
+
+**创建你自己的提示符**。  
+
+你需要设置PS1环境变量来实现这个想法。  
+ 
+```
+export PS1="[Test Prompt] > "  
+```  
+  
+输出为:  
+
+  
+```
+[Test Prompt] >  
+```
+  
+zsh提供了许多的转义序列来允许你把系统信息插入到提示符里。一些可用的转义序列如下：   
+
+转义序列 |	打印效果
+------------- | -------------
+%T	|	系统时间（时：分）
+%*	|	系统时间（时：分：秒）
+%D	|	系统日期（年-月-日）
+%n	|	你的用户名
+%B - %b |	开始到结束使用粗体打印
+%U - %u |	开始到结束使用下划线打印
+%d	|	你目前的工作目录
+%~	|	你目前的工作目录相对于～的相对路径
+%M	|	计算机的主机名
+%m	|	计算机的主机名（在第一个句号之前截断）
+%l	|	你当前的tty  
+
+
+
+你只要将这些转义序列插入到环境变量PS1里就可以了，而后zsh会自动地解析他们。
+ 
+例如:
+
+```
+export PS1="[%* - %D] %d %% "
+```
+
+输出:
+
+```
+[08:44:23 - 06-02-18] /home/username 
+```
+
+-------------------
+
+- 历史记录
+
+不幸的是Gentoo里默认的zsh配置不包含对命令行历史记录的支持。因为使用没有历史记录功能的shell是十分令人沮丧的，所以我们应该输入以下的命令：
+ 
+```
+export HISTSIZE=2000
+export HISTFILE="$HOME/.history"
+```
+
+（如果没有以下命令，历史记录不会被存储）
+
+```
+export SAVEHIST=$HISTSIZE
+```
+
+为了防止记录重复的输入（比如ls -l在同一个shell会话中输入了太多次），你可以设置hist_ignore_all_dups选项： 
+
+```
+setopt hist_ignore_all_dups
+```
+
+一个小技巧可以用来防止某些特定的输入被记录，那就是在输入他们之前先输入至少一个空格。 
+代码
+
+```
+setopt hist_ignore_space
+```
+--------------------------
+
+杂项设置
+
+- 如果你想要避免在切换目录时一直输入乏味的cd命令（比如使用/etc而不是cd /etc）你可以设置autocd选项。 
+
+```
+% setopt autocd
+```
+
+- 如果标准的bash样式的文件名替换（globbing）不和你的胃口，你可以通过extendedglob选项来设置开启扩展的文件名替换（globbing）（与正则表达式有些类似）。 
+
+```
+setopt extendedglob
+```
+
+当上面的选项被设置了以后，你可以使用扩展的文件名替换查询，例如：`cp ^*.(tar|bz2|gz)`。
+
+-----------------------------
+ 
+- 把zsh设置成默认的shell
+
+对于有root权限的用户的选择  
+我们可以通过usermod命令来设置某一个给定用户的shell。   
+
+```
+usermod -s /bin/zsh userlogin
+```
+
+对于非root用户的替代解决方案
+如果你的系统管理员拒绝为你把shell设置成zsh（无论你的请求多么地温和），那么你可以设置bash在启动的时候执行zsh，你要做的一切就是对你的~/.bashrc做一个小修改。 
+
+```
+exec zsh
+```  
+
+改变shell的另外一种方法就是使用chsh命令（一个改变用户登录shell的实用程序）。一个普通用户只能改变自己账户的登录shell。而作为root，你可以改变所有用户的登录shell。   
+
+```$ chsh -s /bin/zsh username```
+
+------------------------
+
+- 插件之 autojump
+
+安装:
+
+```
+brew install autojump
+```
+
+安装之后(下面这一条命令有时候会有更改,建议看屏幕上的指示):
+
+```
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+```
+
+这个插件的功能就是各种 jump, 使用方法:
+
+将你常用的目录加入 autojump 数据库:
+
+`autojump -a [目录]`  
+
+将最频繁的目录权重提高:
+
+`autojump -i [权重]`  
+这将使得该目录更可能被选择跳转。相反的例子是在该目录使用参数 d 来减少权重
+
+`autojump -s`  
+权重查询与跟踪
+
+`autojump --purge`
+命令将会把不再存在的目录从数据库中移除。
+
+通过 `j + 目录名` 可以直接进行目录跳转，而且目录名支持模糊匹配和自动补全，例如你访问过hadoop-1.0.0目录，输入`j hado` 即可正确跳转。`j –stat` 可以看你的历史路径库。
+
+
