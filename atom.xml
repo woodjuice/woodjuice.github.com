@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="WoodJuice.github.com/"/>
-  <updated>2015-08-24T17:29:36.000Z</updated>
+  <updated>2015-10-23T17:35:54.000Z</updated>
   <id>WoodJuice.github.com/</id>
   
   <author>
@@ -13,6 +13,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Alfred自定义web－search攻略]]></title>
+    <link href="WoodJuice.github.com/2015/10/24/Alfred%E8%87%AA%E5%AE%9A%E4%B9%89web%EF%BC%8Dsearch%E6%94%BB%E7%95%A5/"/>
+    <id>WoodJuice.github.com/2015/10/24/Alfred自定义web－search攻略/</id>
+    <published>2015-10-23T17:30:38.000Z</published>
+    <updated>2015-10-23T17:35:54.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="Afred_自定义搜索的简单攻略">Afred 自定义搜索的简单攻略</h1><p>以<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#39318;&#20808;&#65292;&#22312;&#30693;&#20046;&#37324;&#35797;&#30528;&#20570;&#19968;&#27425;&#25628;&#32034;  &#10;&#10;![&#25628;&#32034;&#22270;&#29255;](file:///Users/MuMu/Pictures/screenshot/screenshot-20151022-155324@fordemo.png)&#10;  &#10;  &#10;  &#10;  &#10;&#24471;&#21040;&#32593;&#39029;&#22320;&#22336;&#20026;```http://www.zhihu.com/search?q=alfred&#38;type=question```&#65292;&#36825;&#20010;&#23601;&#26159;&#35201;&#22312;Alfred&#20013;&#36827;&#34892;&#25628;&#32034;&#30340;&#22320;&#22336;&#12290;&#10;&#10;&#25171;&#24320;Alfred&#65292;&#27493;&#39588;&#22914;&#19979;&#22270;&#25152;&#31034;&#12290;&#10;&#10;![](file:///Users/MuMu/Pictures/screenshot/screenshot-20151022-160219_fordemo.png)&#10;&#10;&#20998;&#27493;&#39588;&#35299;&#37322;&#22914;&#19979;&#65288;3-5&#27493;&#65289;&#65306;&#10;&#10;* &#36827;&#20837;Web Search&#20197;&#21518;&#65292;&#30475;&#21491;&#19979;&#35282;&#65292;&#36873;&#25321;&#34;Add Custom Search&#34;.&#10;* &#22312;```Search URL```&#20013;&#22635;&#20837;&#20043;&#21069;&#25214;&#21040;&#30340;&#38142;&#25509;```http://www.zhihu.com/search?q=alfred&#38;type=question```&#65292;&#24182;&#23558;&#20854;&#20013;&#30340;```alfred```&#26367;&#25442;&#25104;```&#65371;query&#65373;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>在<code>keyword</code>中填入你想用的快捷方式，比如这里是<code>zhihu</code>，点击确定。  </li>
+</ul>
+<p>结束。</p>
+<p>试着按<code>Alt+空格</code>，然后输入<code>zhihu</code>试试。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="Afred_自定义搜索的简单攻略">Afred 自定义搜索的简单攻略</h1><p>以<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><]]>
+    </summary>
+    
+      <category term="Alfred" scheme="WoodJuice.github.com/tags/Alfred/"/>
+    
+      <category term="Mac-tips" scheme="WoodJuice.github.com/tags/Mac-tips/"/>
+    
+      <category term="Tech notes" scheme="WoodJuice.github.com/tags/Tech-notes/"/>
+    
+      <category term="Tech-Notes" scheme="WoodJuice.github.com/categories/Tech-Notes/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Hello world]]></title>
